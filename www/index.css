@@ -1,39 +1,13 @@
 body {margin: 0;font-family: Arial;position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;}
+tab, wheel, pages, page, container, document { display: block; }
+
 .absolute {position: absolute;} 
 .bkgcvr {background-position: center;background-size: cover !important;background-repeat: no-repeat;}
 .bkgctn {background-position: center;background-size: contain;background-repeat: no-repeat;}
 .center { text-align: center; }
-[data-swp] > div, [data-swp] > a {display: inline-block;vertical-align: top;white-space: nowrap;}
 .flex {display: flex;}
 .fixed {position: fixed;} 
 .inline-block {display: inline-block;}
 .invert { filter: invert(1); }
 .relative {position: relative;} 
 .static { position: static; }
-tab, wheel, pages, page, container, document { display: block; }
-
-.content {width: 100%;height: 100%;z-index:123;}
-.popup.content {transition: 0.3s all;position: fixed;z-index: 123456790;top:0;left:0;right:0;bottom: 0;backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);}
-.popup.content.active {width: 100%;height: 100%;}
-.popup.content.active ~ .popup { z-index: 123456789; }
-
-.content > .tab { width: 100%; height: 100%; margin: 5px 0 5px 5px; margin: 0; overflow: hidden; position: relative; transition: 0.3s filter; will-change: left; will-change: transform; z-index: 1; overflow: hidden; }
-.content > .tab.flex {display: -ms-flexbox;display: flex;flex-direction: column;height: 100%;overflow-x: hidden;overflow-y: auto;}
-.content > .tab.flex > .wheel {height: auto;margin: auto;}
-.content > .tab.flex > .wheel .page {/* overflow: visible; */height: auto;max-height: 100%;overflow-x: hidden;overflow-y: visible;}
-
-.tab .wheel .page > .absolute.overflow-x {width: 100%;height: 100%;bottom: 0;padding: 0;}
-.tab .wheel .page > .absolute.overflow-x:empty {margin: 0 !important;overflow: hidden;min-height: calc(100% - 86px);padding: 50px 0 !important; background: #ddd; background-color: white;width: 100%;overflow-x: hidden;min-height: calc(100% - 50px);border-top-left-radius: 10px;border-top-right-radius: 10px;}
-.tab .wheel .page > .absolute.overflow-x > .mda.relative { min-height: calc(100% - 172px); }
-
-.wheel {white-space: nowrap;width: 100%;height: 100%;transition: 0.3s transform;position: relative;z-index: 1;}
-.wheel > .pages:not(.dragging) { will-change: transform; transition: 0.3s transform; }
-.wheel > .pages.dragging { transition: unset !important; }
-.page.flex {text-align: center;margin: auto;height: 100%;display: flex;align-items: center;justify-content: center;flex-direction: column;}
-.tab .wheel .page {white-space: normal;display: inline-block;vertical-align: top;width: 100%;height: 100%;overflow-x: hidden;overflow-y: hidden;z-index: 0;position: relative;margin: auto;}
-.tab .wheel .page:empty { background: White; height: 100%; width: 100%; margin: 50px 0 0; border-top-right-radius: 10px; border-top-left-radius: 10px; }
-
-@keyframes ppp-bottom {
-  from {transform: translateY(100%);}
-  to {transform: none;}
-}
