@@ -41,16 +41,20 @@
 
     <header id="header" class="header" role="header">
       <wrap class="options">
-        <nav>
-          <inline>File</inline>
-          <inline>Edit</inline>
-          <inline>Add</inline>
-          <inline>Patterns</inline>
-          <inline>View</inline>
-          <inline>Options</inline>
-          <inline>Tools</inline>
-        </nav>
-        <alert data-after='' data-before=''></alert>
+        <flex>
+            <div class="window"></div>
+            <div class='title'>Untitled Project</div>
+            <nav>
+                <inline>File</inline>
+                <inline>Edit</inline>
+                <inline>Add</inline>
+                <inline>Patterns</inline>
+                <inline>View</inline>
+                <inline>Options</inline>
+                <inline>Tools</inline>
+            </nav>
+            <alert data-after='' data-before=''></alert>
+        </flex>
         <div class="volume">
           <input type="range" orient="vertical"/>
           <input type="range" orient="vertical"/>
@@ -98,7 +102,7 @@
         </dock>
         <wrap>
           <tracks>
-            <div>
+            <inline>
               <track class='selected' data-before="C">
                 <flex>
                     <volume><left></left><rite></rite></volume>
@@ -119,8 +123,58 @@
                 <icon class="latency-comp"></icon>
                 <icon class="record-arm"></icon>
               </track>
-            </div>
-            <div>
+            </inline>
+            <inline>
+              <track data-after="&#x1F941" data-before="1">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+              <track data-after="&#x1F3B9" data-before="2">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+              <track data-before="3">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+              <track data-before="4">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+            </inline>
+            <inline>
               <track data-before="1">
                 <volume><left></left><rite></rite></volume>
                 <icon class="mute"></icon>
@@ -169,15 +223,7 @@
                 <icon class="latency-comp"></icon>
                 <icon class="record-arm"></icon>
               </track>
-            </div>
-            <div>
-              <track></track>
-              <track></track>
-              <track></track>
-              <track></track>
-              <track></track>
-              <track></track>
-            </div>            
+            </inline>            
           </tracks>
           <inspector></inspector>
         </wrap>

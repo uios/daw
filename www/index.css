@@ -7,6 +7,7 @@ aside { width: 172px; height: calc(100% - 86px); background: #333; top: 86px; po
 header {background:#bbb;display:flex;display:-webkit-flex;flex-direction: column;flex-wrap: wrap;align-content: flex-start;width: 100%;height: 86px;position: fixed;top: 0;z-index: 12;overflow-x: scroll;}
 header > wrap {overflow: hidden;border: 1px solid;}
 header > wrap.options {height: calc(100% - 2px);width: 423px;}
+header > wrap.options flex {flex-direction: row;flex-wrap: wrap;align-items: flex-start;width: calc(100% - 70px);}
 header > wrap.controls { height: 100%; width:calc(86px * 2.5);}
 header > wrap.time {height: calc(50% - 2px);width:calc(86px * 2.5);}
 header > wrap.three { height: 100%; width:calc(86px * (4/3));}
@@ -17,9 +18,13 @@ header > wrap.four {height: calc(50% - 2px);width: calc(86px * 2.5);}
 header > wrap.update { height: calc(50% - 2px); width:calc(86px * 1.75);}
 header > wrap.quick {height: calc(50% - 2px);width: calc(86px * 2.5);}
 
-wrap.options { display: flex; flex-direction: column; flex-wrap: wrap; }
-wrap.options nav { padding: 0 10px;width: 320px;height: 30px;line-height: 30px;margin: 5px;white-space: nowrap;background: #557555;text-align: center;color: whitesmoke;}
+wrap.options {display: flex;flex-direction: row;flex-wrap: wrap;align-content: flex-start;}
+wrap.options nav {padding: 0 10px;width: 320px;height: 30px;line-height: 30px;margin: 0 5px;white-space: nowrap;background: #557555;text-align: center;color: whitesmoke;}
 wrap.options nav inline {padding: 0 2px;}
+wrap.options alert {padding: 0 10px;width: 320px;height: 22px;line-height: 30px;margin: 2px 0 0 5px;white-space: nowrap;background: #557555;text-align: center;color: whitesmoke;}
+wrap.options .title {padding: 0 10px;width: 244px;height: 18px;line-height: 18px;margin: 5px 0px 2px;font-size: 12px;white-space: nowrap;background: #557555;color: whitesmoke;display: inline-block;}
+wrap.options .window {padding: 0 10px;width: 54px;height: 18px;line-height: 18px;margin: 5px 2px 2px 5px;font-size: 12px;white-space: nowrap;background: #557555;color: whitesmoke;display: inline-block;}
+
 wrap.options div.volume {width: 70px;height: 100%;text-align: center;}
 wrap.options div.volume input {width: 8px;height: calc(100% - 10px);padding: 0 5px;margin: 5px;}
 
@@ -36,7 +41,7 @@ aside > wrap:before { content:''; display:block; width:20px; height: 100%; backg
 aside > tabs {width: 100%;height: 36px;position: absolute;top: 30px;left: 0;right: 0;width: 100%;line-height: 36px;height: 36px;margin: 0 auto;color: white;display: flex;display: -webkit-flex;}
 aside > tabs > tab {width: calc(100%/3);height: 100%;text-align: center;}
 
-main > section.mixer tracks {width: calc(100% - 239px);height:100%;border-right: 1px solid #000;}
+main > section.mixer tracks {width: calc(100% - 239px);height:100%;border-right: 1px solid #000;white-space: nowrap;}
 
 input[type=range][orient=vertical] { writing-mode: bt-lr; -webkit-appearance: slider-vertical; }
 [data-before]:before {content: attr(data-before);}
@@ -48,7 +53,7 @@ dock, inspector, tabs, tab, tracks, wrap {display: block;}
 .bkgcvr {background-position: center;background-size: cover !important;background-repeat: no-repeat;}
 .bkgctn {background-position: center;background-size: contain;background-repeat: no-repeat;}
 .center { text-align: center; }
-.flex {display: flex;}
+flex, .flex {display: flex;}
 .fixed {position: fixed;} 
 .inline-block {display: inline-block;}
 .invert { filter: invert(1); }
