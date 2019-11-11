@@ -50,7 +50,7 @@ String.prototype.router = function(b, a = b ? b : [], state = this.valueOf()) { 
 window.route = {
   get: {
     page: (state) => { //console.log('route.get.page',state);  
-      var whl, pop, GOT = state===window.location.origin ? [] : state.hash(), HKY = [], hash = GOT[0] ? GOT[0] : '/'; 
+      var whl, pop, GOT = state===window.location.origin ? [] : route.get.path.dir(state), HKY = [], hash = GOT[0] ? GOT[0] : '/'; 
       GOT.forEach((m,n) => {  //console.log(m);
         whsh = str_replace('#','',m), HKY[n] = whsh; 
         if(m.includes('#')) { HKY[n] = '#'; }

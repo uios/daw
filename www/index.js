@@ -21,7 +21,7 @@ function init() {
   document.body.removeAttribute('data-nojs');
   //firebase.initializeApp(auth.config); 
   //firebase.auth().onAuthStateChanged(event => auth.change(event));
-  window.location.pathname.router();
+  //window.location.pathname.router();
 }
 function notify(json) { var counter = json.counter, message = json.message; alerts.push(json);
   return new Promise((resolve, reject) => { var note = byId('notify');

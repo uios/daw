@@ -2,13 +2,12 @@
 <html lang='en-US' title='DAW - uiOS'>
 
   <head>
-    <title>DAW - uiOS</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,viewport-fit=cover">
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="Description" content="A web development platform built on the JAMstack.">
-    <meta name="theme-color" content="#2574d7">
+    <meta name="Description" content="A digital audio workstation built on the JAMstack.">
+    <meta name="theme-color" content="#7777">
     <link rel="apple-touch-startup-image" href="/url/png/ico/logo-builder.png">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -33,16 +32,175 @@
       <style>
         body { background: #ff3b30; overflow: hidden; margin: 0; -webkit-font-smoothing: antialiased; }
         noscript { border: 1px solid #bbb; padding: 10px; border-radius: 3px; position: absolute; top: 36px; left: 0; right: 0; bottom: 36px; width: calc(100% - 40px); height: 86px; margin: auto; background: whitesmoke; z-index: 999999999999999999999999; }
-        noscript div { height: 36px; font-weight: bolder; }
-        noscript div:first-child { line-height: calc(36px); font-family: Lato Regular; font-weight: bolder; font-size: 18px; }
-        noscript div:nth-child(2) { line-height: calc(50px/3); font-family: Lato Light; font-weight: bolder; font-size: 13px; }
+        noscript inline { height: 36px; font-weight: bolder; }
+        noscript inline:first-child { line-height: calc(36px); font-family: Lato Regular; font-weight: bolder; font-size: 18px; }
+        noscript inline:nth-child(2) { line-height: calc(50px/3); font-family: Lato Light; font-weight: bolder; font-size: 13px; }
         [data-nojs] > :not(noscript) { display: none; }
       </style>
     </noscript>
 
-    <div id='progress' class='progress'><div class='filler'></div></div>
+    <header id="header" class="header" role="header">
+      <wrap class="options">
+        <nav>
+          <inline>File</inline>
+          <inline>Edit</inline>
+          <inline>Add</inline>
+          <inline>Patterns</inline>
+          <inline>View</inline>
+          <inline>Options</inline>
+          <inline>Tools</inline>
+        </nav>
+        <alert data-after='' data-before=''></alert>
+        <div class="volume">
+          <input type="range" orient="vertical"/>
+          <input type="range" orient="vertical"/>
+        </div>
+      </wrap>
+      <wrap class="controls">
+        <inline></inline>
+      </wrap>
+      <wrap class="three">
+        <inline></inline>
+      </wrap>     
+      <wrap class="time">
+        <inline></inline>
+      </wrap>    
+      <wrap class="pattern">
+        <inline></inline>
+      </wrap>   
+      <wrap class="waves">
+        <inline></inline>
+      </wrap>    
+      <wrap class="tools">
+        <inline></inline>
+      </wrap>   
+      <wrap class="four">
+        <inline></inline>
+      </wrap>   
+      <wrap class="update">
+        <inline></inline>
+      </wrap>   
+      <wrap class="quick">
+        <inline></inline>
+      </wrap> 
+    </header>
 
-    <main class='content main' role='main'></main>
+    <main id="main" class='main' role='main'>
+      <section id="sequencer" class="sequencer">
+        <dock>
+          <icon data-before='&#x25B6'></icon>
+        </dock>
+        <wrap></wrap>
+      </section>
+      <section id="mixer" class="mixer">
+        <dock>
+          <icon data-before='&#x25B6'></icon>
+        </dock>
+        <wrap>
+          <tracks>
+            <div>
+              <track class='selected' data-before="C">
+                <flex>
+                    <volume><left></left><rite></rite></volume>
+                    <icon class="fx"></icon>
+                    <icon class="fx"></icon>
+                    <icon class="record-arm"></icon>
+                </flex>
+              </track>
+              <track data-before="M">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+            </div>
+            <div>
+              <track data-before="1">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+              <track data-before="2">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+              <track data-before="3">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+              <track data-before="4">
+                <volume><left></left><rite></rite></volume>
+                <icon class="mute"></icon>
+                <knob class="pan"></knob>
+                <input type="range" orient="vertical">
+                <icon class="invert-phase"></icon>
+                <icon class="swap-stero"></icon>
+                <knob class="stereo-sep"></knob>
+                <icon class="fx"></icon>
+                <icon class="latency-comp"></icon>
+                <icon class="record-arm"></icon>
+              </track>
+            </div>
+            <div>
+              <track></track>
+              <track></track>
+              <track></track>
+              <track></track>
+              <track></track>
+              <track></track>
+            </div>            
+          </tracks>
+          <inspector></inspector>
+        </wrap>
+      </section>
+      <section id="playlist" class="playlist">
+        <dock>
+          <icon data-before='&#x25B6'></icon>
+        </dock>
+        <wrap></wrap>
+      </section>
+    </main>
+
+    <aside id="browser" class="browser">
+      <dock>
+        <icon data-before='&#x25B6'></icon>
+      </dock>
+      <tabs>
+        <tab data-before="&#x1f509;"></tab>
+        <tab data-before="&#x1F4C4"></tab>
+        <tab data-before="&#x1F50C"></tab>
+      </tabs>
+      <wrap></wrap>
+    </aside>
 
   </body>
 

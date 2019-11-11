@@ -1,5 +1,48 @@
-body {margin: 0;font-family: Arial;position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;}
-tab, wheel, pages, page, container, document { display: block; }
+body {margin: 0;font-family: Arial;position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0; background:#777;}
+body[data-mode="dark"] { background: black; }
+body[data-mode="lite"] { background: white; }
+
+aside { width: 172px; height: calc(100% - 86px); background: #333; top: 86px; position: fixed; }
+
+header {background:#bbb;display:flex;display:-webkit-flex;flex-direction: column;flex-wrap: wrap;align-content: flex-start;width: 100%;height: 86px;position: fixed;top: 0;z-index: 12;overflow-x: scroll;}
+header > wrap {overflow: hidden;border: 1px solid;}
+header > wrap.options {height: calc(100% - 2px);width: 423px;}
+header > wrap.controls { height: 100%; width:calc(86px * 2.5);}
+header > wrap.time {height: calc(50% - 2px);width:calc(86px * 2.5);}
+header > wrap.three { height: 100%; width:calc(86px * (4/3));}
+header > wrap.pattern {height: calc(50% - 2px);width: calc(86px * 2.5);}
+header > wrap.waves { height: calc(50% - 2px); width:calc(86px * 1.75);}
+header > wrap.tools {height: calc(50% - 2px);width: calc(86px * 2.5);}
+header > wrap.four {height: calc(50% - 2px);width: calc(86px * 2.5);}
+header > wrap.update { height: calc(50% - 2px); width:calc(86px * 1.75);}
+header > wrap.quick {height: calc(50% - 2px);width: calc(86px * 2.5);}
+
+wrap.options { display: flex; flex-direction: column; flex-wrap: wrap; }
+wrap.options nav { padding: 0 10px;width: 320px;height: 30px;line-height: 30px;margin: 5px;white-space: nowrap;background: #557555;text-align: center;color: whitesmoke;}
+wrap.options nav inline {padding: 0 2px;}
+wrap.options div.volume {width: 70px;height: 100%;text-align: center;}
+wrap.options div.volume input {width: 8px;height: calc(100% - 10px);padding: 0 5px;margin: 5px;}
+
+main {width: calc(100% - 172px);height: calc(100% - 86px);background: #777;position: fixed;top: 86px;right:0;}
+main > section {position: absolute;border: 1px solid #000;}
+main > .sequencer {top:0;left:0;width: calc((100% - 4px)/3);height: 50%;/* background: green; */}
+main > .playlist {left: calc((100% - 4px)/3);width: calc((200% - 4px)/3);height: 50%;/* background: orange; */}
+main > .mixer {top: 50%;width: calc(100% - 2px);height: 50%;/* background: purple; */}
+
+main > section > dock, aside > dock {/* background: #bbb; */position: absolute;top: 0;left: 0;right: 0;width: calc(100% - 20px);line-height: 30px;height: 30px;margin: 0 auto;color: white;}
+main > section > wrap {background: #aaa;position: absolute;left: 0;right: 0;bottom: 0;width: calc(100% - 20px);height: calc(100% - 40px);margin: auto auto 10px;}
+aside > wrap {background: #aaa;position: absolute;right: 0;bottom: 0;width: calc(100% - 20px);height: calc(100% - 66px);margin: auto auto 0;}
+aside > wrap:before { content:''; display:block; width:20px; height: 100%; background:#222; position: absolute; left: -20px; }
+aside > tabs {width: 100%;height: 36px;position: absolute;top: 30px;left: 0;right: 0;width: 100%;line-height: 36px;height: 36px;margin: 0 auto;color: white;display: flex;display: -webkit-flex;}
+aside > tabs > tab {width: calc(100%/3);height: 100%;text-align: center;}
+
+main > section.mixer tracks {width: calc(100% - 239px);height:100%;border-right: 1px solid #000;}
+
+input[type=range][orient=vertical] { writing-mode: bt-lr; -webkit-appearance: slider-vertical; }
+[data-before]:before {content: attr(data-before);}
+[data-after]:after { content: attr(data-after); }
+
+dock, inspector, tabs, tab, tracks, wrap {display: block;}
 
 .absolute {position: absolute;} 
 .bkgcvr {background-position: center;background-size: cover !important;background-repeat: no-repeat;}
