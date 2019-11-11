@@ -1,0 +1,8 @@
+{
+    "name": "uiOS - Builder",
+    "short_name": "Builder",
+    "theme_color": "#2574d7",
+    "background_color": "#2574d7",
+    "start_url": "/builder/",
+    "display": "standalone"
+}
