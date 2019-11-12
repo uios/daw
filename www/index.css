@@ -40,19 +40,38 @@ main > .playlist {left: calc((100% - 4px)/3);width: calc((200% - 4px)/3);height:
 main > .mixer {top: 50%;width: calc(100% - 2px);height: 50%;/* background: purple; */}
 
 main > section > dock, aside > dock {/* background: #bbb; */position: absolute;top: 0;left: 0;right: 0;width: calc(100% - 20px);line-height: 30px;height: 30px;margin: 0 auto;color: white;}
-main > section > wrap {background: #aaa;position: absolute;left: 0;right: 0;bottom: 0;width: calc(100% - 20px);height: calc(100% - 40px);margin: auto auto 10px;}
+main > section > wrap {background: #aaa;position: relative;top: 30px;left: 0;right: 0;bottom: 0;width: calc(100% - 20px);height: calc(100% - 40px);margin: auto auto 10px;}
 aside > wrap {background: #aaa;position: absolute;right: 0;bottom: 0;width: calc(100% - 20px);height: calc(100% - 66px);margin: auto auto 0;}
 aside > wrap:before { content:''; display:block; width:20px; height: 100%; background:#222; position: absolute; left: -20px; }
 aside > tabs {width: 100%;height: 36px;position: absolute;top: 30px;left: 0;right: 0;width: 100%;line-height: 36px;height: 36px;margin: 0 auto;color: white;display: flex;display: -webkit-flex;}
 aside > tabs > tab {width: calc(100%/3);height: 100%;text-align: center;}
 
-main > section.mixer tracks {width: calc(100% - 239px);height:100%;border-right: 1px solid #000;white-space: nowrap;}
+main > section.mixer tracks {display: block;width: calc(100% - 239px);height:100%;border-right: 1px solid #000;white-space: nowrap;overflow: hidden;position: absolute;top: 0;left: 0;}
+main > section.mixer tracks > inline {position: absolute;top: 0;display: inline-flex;}
+main > section.mixer tracks > inline:nth-child(1) { border-right: 5px solid; }
+main > section.mixer tracks > inline:nth-child(2) {left: 106px;width: calc(100% - 314px);overflow-y: hidden;}
+main > section.mixer tracks > inline:nth-child(3) {right: 0;border-left: 5px solid;border-right: 0;}
+main > section.mixer tracks > inline, main > section.mixer tracks > inline > insert { height: 100%; vertical-align: top; }
+main > section.mixer tracks > inline[data-before="C"] volume { width: 36px; background: red; }
+main > section.mixer tracks > inline:not([data-before="C"]) {background: #666;}
+main > section.mixer tracks > inline > insert {position:relative;text-align: center;padding-top:50px;height: 100%;width: 50px;border-right: 1px solid;display: inline-flex;flex-direction: column;}
+main > section.mixer tracks > inline > insert:before { width: 100%; display: block; position: absolute; top: 0; left: 0;}
+main > section.mixer tracks > inline > insert:after { width: 100%; display: block; position: absolute; top: 25px; left: 0; }
+main > section.mixer tracks > inline > insert:last-child { border: 0; }
+main > section.mixer tracks > inline > insert > volume {background: #333;margin: 0 auto;border-radius:5px;}
+main > section.mixer tracks > inline > insert.selected > volume {width: calc(100% - 6px);height: calc(100% - 120px);}
+main > section.mixer tracks > inline > insert:not(.selected) > volume {width: calc(100% - 10px);height: calc(100% - 240px);}
+main > section.mixer inspector {position: absolute;top: 0;right: 0;width: 240px;height: 100%;background: #999;}
 
+volume {position: relative;white-space: nowrap;display: flex;overflow: hidden;}
+volume > left, volume > rite {width: calc((100% - 1px)/2);background: yellow;position: relative;/* bottom: 0; */display: inline-block;vertical-align: bottom;margin: auto 0 0;}
+volume > left { height: 40%; border-right: 1px solid; } volume > rite { height: 60%; }
 input[type=range][orient=vertical] { writing-mode: bt-lr; -webkit-appearance: slider-vertical; }
 [data-before]:before {content: attr(data-before);}
 [data-after]:after { content: attr(data-after); }
 
-dock, inspector, tabs, tab, tracks, wrap {display: block;}
+inline, insert { display: inline-block; }
+dock, inspector, left, rite, tabs, tab, tracks, wrap {display: block;}
 
 .absolute {position: absolute;} 
 .bkgcvr {background-position: center;background-size: cover !important;background-repeat: no-repeat;}
